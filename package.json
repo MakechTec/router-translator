@@ -1,0 +1,30 @@
+{
+  "name": "@makechtec/router-translator",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "concat": "zalihui source1=src/RouteTranslator.ts source2=src/Route.ts target=prebuild/RouteTranslator.ts",
+    "compile": "tsc && terser prebuild/RouteTranslator.js --output index.js",
+    "test": "node test/index.mjs",
+    "prod": "npm run concat && npm run compile && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakechTec/router-translator.git"
+  },
+  "author": "makechtec",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/MakechTec/router-translator/issues"
+  },
+  "homepage": "https://github.com/MakechTec/router-translator#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
