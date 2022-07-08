@@ -6,9 +6,20 @@ export class RouteTranslator{
         return part.replace( "{", "" ).replace( "}", "" );
     }
 
-    public extractInfo( route: string, uri: string ){
+    public extractInfo( route: string, uri: string ): Route{
         let m = this.extractVariables(route, uri)
         return new Route(route, uri, m);
+    }
+
+    public buildUri(route: string, variables: any[]): string{
+        let uri = route;
+
+        variables.forEach((variable) => {
+            const keyReg = new RegExp("{"+variable.key+"}", "g");
+            uri = uri.replace(keyReg, variable.value);
+        });
+
+        return uri;
     }
 
     private extractVariables( route: string, uri: string): any[]{

@@ -35,3 +35,14 @@ result:
             value: "45"
         }
     ]
+
+## buildUri ##
+
+It perform the inverse function:
+
+    const uri = translator.buildUri("/products/{id}/description", [ {key: "id", value: "23"} ]);
+    console.log(uri);
+
+result:
+
+    "/products/23/description"
